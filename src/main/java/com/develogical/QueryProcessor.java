@@ -40,6 +40,13 @@ public class QueryProcessor {
             return String.valueOf(ans);
         }
 
+        if (query.toLowerCase().contains("power")) {
+            String[] s= query.split("is")[1].split(" to the power of ");
+            double ans = Math.pow(Integer.parseInt(s[0].trim()), Integer.parseInt(s[1].trim()));
+            return String.valueOf(ans);
+        }
+
+
         if (query.toLowerCase().contains("which of the following numbers is both a square and a cube")) {
             String[] s= query.split(":")[1].split(",");
 //            TODO: Make this work
