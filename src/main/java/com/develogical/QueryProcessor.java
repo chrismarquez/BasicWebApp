@@ -19,7 +19,7 @@ public class QueryProcessor {
         
         if (query.toLowerCase().trim().contains("whichofthefollowingnumbersisthelargest")) {
             String[] s= query.split(":")[1].split(",");
-            return Math.max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
+            return Math.max(stringList.stream().map(Integer::parseInt).collect(Collectors.toList()));
         }
 
         if (query.toLowerCase().contains("what is 12 plus 7")) {
