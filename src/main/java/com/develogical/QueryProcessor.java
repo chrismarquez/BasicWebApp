@@ -16,6 +16,10 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("synchro")) {
             return "Level 2 Synchro Tuner Formula Synchron tunes Level 8 Synchro Monster Stardust Dragon";
         }
+        
+        if (query.toLowerCase().trim().contains("whichofthefollowingnumbersisthelargest")) {
+            string[] s= query.split(":")[1].split(",");
+            return max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
 
         if (query.toLowerCase().contains("what is 12 plus 7")) {
             return "19";
