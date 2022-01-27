@@ -18,7 +18,7 @@ public class QueryProcessor {
         }
         
         if (query.toLowerCase().trim().contains("whichofthefollowingnumbersisthelargest")) {
-            string[] s= query.split(":")[1].split(",");
+            String[] s= query.split(":")[1].split(",");
             return max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
         }
 
