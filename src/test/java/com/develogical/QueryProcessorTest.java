@@ -35,4 +35,10 @@ public class QueryProcessorTest {
     public void canPerformSynchroSummon() throws Exception {
         assertThat(queryProcessor.process("synchro"), containsString("tunes"));
     }
+
+	@Test
+	public void addTwoNumbers() throws Exception {
+		assertThat(queryProcessor.process("5655e3d0: which of the following numbers is the largest: 499, 69"), containsString("499"));
+	}
+
 }

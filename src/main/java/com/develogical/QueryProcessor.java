@@ -1,5 +1,10 @@
 package com.develogical;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -17,9 +22,11 @@ public class QueryProcessor {
             return "Level 2 Synchro Tuner Formula Synchron tunes Level 8 Synchro Monster Stardust Dragon";
         }
         
-        if (query.toLowerCase().trim().contains("whichofthefollowingnumbersisthelargest")) {
-            String[] s= query.split(":")[1].split(",");
-            return Math.max(stringList.stream().map(Integer::parseInt).collect(Collectors.toList()));
+        if (query.toLowerCase().trim().contains("largest")) {
+            String[] s = query.split(":")[2].trim().split(",");
+            List<String> list = Arrays.asList(s);
+            Optional<Integer> result = list.stream().map(String::trim).map(Integer::parseInt).max(Comparator.naturalOrder());
+            return result.toString();
         }
 
         if (query.toLowerCase().contains("what is 12 plus 7")) {
