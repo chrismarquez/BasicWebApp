@@ -22,9 +22,17 @@ public class QueryProcessor {
             return max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
         }
 
-        if (query.toLowerCase().contains("what is 12 plus 7")) {
-            return "19";
+        if (query.toLowerCase().contains("what is")) {
+            string[] s= query.split(":")[1].split(",");
+            return Integer.parseInt(s[0]) + Integer.parseInt(s[1]);
         }
+
+        if (query.toLowerCase().contains("which of the following numbers is both a square and a cube")) {
+            string[] s= query.split(":")[1].split(",");
+//            TODO: Make this work
+            return max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
+        }
+
 
         return "";
     }
