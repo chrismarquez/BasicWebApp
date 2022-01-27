@@ -24,6 +24,10 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
 
+        if (query.toLowerCase().contains("mads")) {
+            return "wants to know if any of her changes are deploying";
+        }
+
         if (query.toLowerCase().contains("imperial")) {
             return "Imperial College is a university in London";
         }
