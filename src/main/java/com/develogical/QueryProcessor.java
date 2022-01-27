@@ -1,5 +1,20 @@
 package com.develogical;
 
+
+public static boolean isPrime(int n) {
+if (n<= 1) {
+return false;
+}
+for (int i = 2; i< n; i++) {
+if (n % i == 0) {
+return false;
+}
+}
+return true;
+}
+}
+
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -29,9 +44,17 @@ public class QueryProcessor {
             return result.toString();
         }
 
-        if (query.toLowerCase().contains("what is 12 plus 7")) {
-            return "19";
+        if (query.toLowerCase().contains("what is \\\\d+ plus \\\\d+")) {
+            string[] s= query.split("is")[1].split(" plus ");
+            return Integer.parseInt(s[0]) + Integer.parseInt(s[1]);
         }
+
+        if (query.toLowerCase().contains("which of the following numbers is both a square and a cube")) {
+            string[] s= query.split(":")[1].split(",");
+//            TODO: Make this work
+            return max(Integer.parseInt(s[0]),Integer.parseInt(s[1]));
+        }
+
 
         return "";
     }
