@@ -12,6 +12,11 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("imperial")) {
             return "Imperial College is a university in London";
         }
+
+        if (query.toLowerCase().contains("synchro")) {
+            return "Level 2 Synchro Tuner Formula Synchron tunes Level 8 Synchro Monster Stardust Dragon";
+        }
+
         return "";
     }
 }
