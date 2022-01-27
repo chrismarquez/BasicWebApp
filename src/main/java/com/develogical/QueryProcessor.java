@@ -22,6 +22,13 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("whichyearwastheresamayfirstelected")) {
             return "2016";
         }
+    if (query.toLowerCase().trim().contains("fibonaccisequence"))  {
+                Integer s=Integer.parseInt(query.split(" ")[3].replace("th",""));
+                Double firstpart = Math.pow(1.6180339,s);
+                Double secondpart = Math.pow(-0.6180339,s);
+                return Integer.toString((int)((firstpart-secondpart)/2.236067977));
+
+            }
 
         if (query.toLowerCase().contains("synchro")) {
             return "Level 2 Synchro Tuner Formula Synchron tunes Level 8 Synchro Monster Stardust Dragon";
