@@ -23,7 +23,7 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("what is")) {
-            string[] s= query.split(":")[1].split(",");
+            string[] s= query.split(":")[1].split(" plus ");
             return Integer.parseInt(s[0]) + Integer.parseInt(s[1]);
         }
 
