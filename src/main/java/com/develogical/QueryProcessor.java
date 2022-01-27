@@ -37,7 +37,7 @@ public class QueryProcessor {
             return Math.max(stringList.stream().map(Integer::parseInt).collect(Collectors.toList()));
         }
 
-        if (query.toLowerCase().contains("what is")) {
+        if (query.toLowerCase().contains("what is \\\\d+ plus \\\\d+")) {
             string[] s= query.split("is")[1].split(" plus ");
             return Integer.parseInt(s[0]) + Integer.parseInt(s[1]);
         }
