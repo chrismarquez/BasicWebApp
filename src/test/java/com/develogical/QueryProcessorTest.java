@@ -31,6 +31,11 @@ public class QueryProcessorTest {
 		assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
 	}
 
+	@Test
+	public void isNotCaseSensitive() throws Exception {
+		assertThat(queryProcessor.process("what is 7 plus 10"), containsString("17"));
+	}
+
     @Test
     public void canPerformSynchroSummon() throws Exception {
         assertThat(queryProcessor.process("synchro"), containsString("tunes"));
